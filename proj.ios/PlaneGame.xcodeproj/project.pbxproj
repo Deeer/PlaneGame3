@@ -18,6 +18,8 @@
 		047956651ABFE68600409CCF /* MapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 047956631ABFE68600409CCF /* MapLayer.cpp */; };
 		047956691ABFE71100409CCF /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 047956671ABFE71100409CCF /* GameLayer.cpp */; };
 		0479566B1ABFF3B800409CCF /* BG in Resources */ = {isa = PBXBuildFile; fileRef = 0479566A1ABFF3B800409CCF /* BG */; };
+		0487D2D41AC0F0D300AA6E78 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0487D2D21AC0F0D300AA6E78 /* Plane.cpp */; };
+		0487D2D61AC0F51E00AA6E78 /* Game in Resources */ = {isa = PBXBuildFile; fileRef = 0487D2D51AC0F51E00AA6E78 /* Game */; };
 		15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */; };
 		15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88D1682F7D5002FB0C5 /* b2CollideCircle.cpp */; };
 		15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88E1682F7D5002FB0C5 /* b2CollideEdge.cpp */; };
@@ -307,6 +309,9 @@
 		047956671ABFE71100409CCF /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
 		047956681ABFE71100409CCF /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		0479566A1ABFF3B800409CCF /* BG */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BG; sourceTree = "<group>"; };
+		0487D2D21AC0F0D300AA6E78 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
+		0487D2D31AC0F0D300AA6E78 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
+		0487D2D51AC0F51E00AA6E78 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Game; sourceTree = "<group>"; };
 		15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		15A3D8891682F7D5002FB0C5 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
@@ -873,6 +878,8 @@
 			children = (
 				047956671ABFE71100409CCF /* GameLayer.cpp */,
 				047956681ABFE71100409CCF /* GameLayer.h */,
+				0487D2D21AC0F0D300AA6E78 /* Plane.cpp */,
+				0487D2D31AC0F0D300AA6E78 /* Plane.h */,
 			);
 			name = GameLayer;
 			sourceTree = "<group>";
@@ -1986,6 +1993,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0487D2D51AC0F51E00AA6E78 /* Game */,
 				0479566A1ABFF3B800409CCF /* BG */,
 				0404F55A1ABFA37A00B38A54 /* Menu */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -2094,6 +2102,7 @@
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				0479565E1ABFE1B800409CCF /* MyFont.fnt in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
+				0487D2D61AC0F51E00AA6E78 /* Game in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2315,6 +2324,7 @@
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
+				0487D2D41AC0F0D300AA6E78 /* Plane.cpp in Sources */,
 				1A8F3B75175E05DA00049216 /* Bone.cpp in Sources */,
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,

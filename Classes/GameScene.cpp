@@ -27,6 +27,10 @@ bool GameScene::initGameSence(int level)
     if (!CCScene::init()) return false;
     
     
+    //加载资源
+    this->loadResource();
+    
+    
     
 //    m_level=level;
     
@@ -37,9 +41,10 @@ bool GameScene::initGameSence(int level)
     this->addChild(maplayer);
    
     
+     
+    GameLayer *gameLayer =GameLayer::create();
+    this->addChild(gameLayer);
     
-//    GameLayer *GameLayer =GameLayer::createGameLayer(level);
-//    this->addChild(GameLayer);
     
     
     
@@ -53,3 +58,8 @@ void GameScene:: onEnterTransitionDidFinish()
     SimpleAudioEngine::sharedEngine()->playBackgroundMusic("TheDawn.mp3");
     
 }
+void GameScene::loadResource()
+{
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Game/sp_all.plist");
+}
+

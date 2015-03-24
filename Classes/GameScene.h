@@ -21,6 +21,8 @@ public:
     void onEnterTransitionDidFinish();
 private:
     int m_level;
+    //加载资源
+    void loadResource();
 };
 
 

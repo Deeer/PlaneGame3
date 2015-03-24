@@ -11,12 +11,31 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "Plane.h"
 USING_NS_CC;
+
 class GameLayer:public CCLayer
 {
+    
+    
 public:
-    static GameLayer*createGameLayer(int level);
-    bool initGameLayer(int  level);
+//    static GameLayer*createGameLayer(int level);
+//    bool initGameLayer(int  level);
+    CREATE_FUNC(GameLayer);
+    bool init();
+      void onEnterTransitionDidFinish();
+private:
+    Plane* m_plane;
+    CCPoint m_beginPoint;
+    void addPlane();
+    
+    void openTouch();
+    
+    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    // optional
+    
+   void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+
     
 };
 

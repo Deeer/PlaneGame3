@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "MenuLayer.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -33,7 +34,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // run
 //    pDirector->runWithScene(pScene);
     
-    CCScene *pScene= MenuLayer::scene();
+//    CCScene *pScene= MenuLayer::scene();
+    CCScene *pScene =GameScene::createGameSence(1);
     pDirector->runWithScene(pScene);
     
     return true;

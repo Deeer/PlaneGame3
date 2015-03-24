@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8D4A52BC-D9C2-4C5C-B48E-C5D8DA6F5FAB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PlaneGame</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>117996AFA811378AE4FD8DDFF3DD0A38112C6749</key>
+		<string>https://github.com/Deeer/PlaneGame3.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>proj.ios/PlaneGame.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>117996AFA811378AE4FD8DDFF3DD0A38112C6749</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Deeer/PlaneGame3.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>117996AFA811378AE4FD8DDFF3DD0A38112C6749</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>117996AFA811378AE4FD8DDFF3DD0A38112C6749</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PlaneGame</string>
+		</dict>
+	</array>
+</dict>
+</plist>
