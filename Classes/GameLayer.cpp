@@ -8,9 +8,13 @@
 
 #include "GameLayer.h"
 #include "define.h"
+#include "SimpleAudioEngine.h"
+#include "Cloud.h"
 bool GameLayer::init()
 {
     if (!CCLayer::init()) return false;
+    
+    
     
 
     
@@ -23,8 +27,22 @@ void GameLayer::onEnterTransitionDidFinish()
     
     
     CCLayer::onEnterTransitionDidFinish();
+    
+    this->schedule(schedule_selector(GameLayer::addCloud), 2);
+    
     this->addPlane();
    
+}
+void GameLayer::addCloud(float dt)
+{
+    Cloud *cloud =Cloud::create();
+    this->addChild(cloud);
+    //CCRANDOM_0_1()去的0-1之间的随机数
+    float X =CCRANDOM_0_1()*SCREEN.width;
+    float Y =SCREEN.height+cloud->getContentSize().height*.5;
+    cloud->setPosition(ccp(X, Y));
+    
+    
 }
  void  GameLayer::addPlane()
 {
@@ -35,10 +53,21 @@ void GameLayer::onEnterTransitionDidFinish()
     m_plane->setPosition(ccp(SCREEN.width*0.5, -m_plane->getContentSize().height*0.5));
     CCMoveTo *moveTo =CCMoveTo::create(1, SCREEN_POSITION(0.5, 0.2));
     CCCallFunc *callBack=CCCallFunc::create(this, callfunc_selector(GameLayer::openTouch));
-    CCSequence *seq =CCSequence::create(moveTo,callBack);
+ 
+    CCEaseBackInOut *backInOut =CCEaseBackInOut::create(moveTo);
+       CCSequence *seq =CCSequence::create(backInOut,callBack);
+
     m_plane->runAction(seq);
     
     
+}
+
+void GameLayer::addBullet()
+{
+    
+    Bullet *bullet= Bullet::createBullet(m_plane->getPlaneLevel());
+    bullet->setPosition(m_plane->getPosition());
+    this->addChild(bullet);
 }
 
 void GameLayer::openTouch()
@@ -79,3 +108,11 @@ bool  GameLayer:: ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
      m_beginPoint=pTouch->getLocation();
  };
+void GameLayer::shootBullet()
+{
+    Bullet *bullet=Bullet::createBullet(m_plane->getPlaneLevel());
+    bullet->setZOrder(-1);
+    bullet->setPosition(m_plane->getPosition());
+    this->addChild(bullet); //+1  bullet->retain();
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("effect_bullet.mp3");
+}

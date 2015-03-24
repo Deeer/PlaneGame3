@@ -35,11 +35,12 @@ bool  MapLayer:: initMapLayer(int level){
     this->addChild(m_map2);
     
     this->scheduleUpdate();
+//    this->schedule(schedule_selector(MapLayer::update), 1);
     
     return true;
     
 }
-void MapLayer:: update(float dt)
+void MapLayer::update(float dt)
 {
     
     m_map1->setPositionY(m_map1->getPositionY()-2);
@@ -56,7 +57,7 @@ void MapLayer:: update(float dt)
 }
 void MapLayer::onEnter()
 {
-    CCLayer::onExit();
+    CCLayer::onEnter();
 };
 void MapLayer::onExit()
 {

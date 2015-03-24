@@ -25,18 +25,20 @@ GameScene* GameScene::createGameSence(int level)
 bool GameScene::initGameSence(int level)
 {
     if (!CCScene::init()) return false;
-    
+    //设置随机算子
+    //time(0)返回当前系统时间（秒数）。
+    srand(time(0));
     
     //加载资源
     this->loadResource();
-    
+
     
     
 //    m_level=level;
     
     
     
-    //向当前场景中添加地图层
+//    //向当前场景中添加地图层
     MapLayer *maplayer= MapLayer::createMapLayer(level);
     this->addChild(maplayer);
    
@@ -61,5 +63,7 @@ void GameScene:: onEnterTransitionDidFinish()
 void GameScene::loadResource()
 {
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Game/sp_all.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Game/bullet_lv.plist");
+
 }
 

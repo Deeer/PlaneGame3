@@ -34,8 +34,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // run
 //    pDirector->runWithScene(pScene);
     
-//    CCScene *pScene= MenuLayer::scene();
-    CCScene *pScene =GameScene::createGameSence(1);
+    CCScene *pScene= MenuLayer::scene();
+//    CCScene *pScene =GameScene::createGameSence(1);
     pDirector->runWithScene(pScene);
     
     return true;

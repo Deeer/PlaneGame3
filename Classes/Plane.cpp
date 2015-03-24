@@ -7,6 +7,7 @@
 //
 
 #include "Plane.h"
+#include "GameLayer.h"
 bool Plane::init()
 {//精灵中的纹理对象负责显示
 //    setTexture(NULL);
@@ -33,9 +34,9 @@ bool Plane::init()
         animation->setLoops(-1);
         CCAnimate *animate =CCAnimate::create(animation);
         fire->runAction(animate);
-    fire->setPosition(ccp(32, -30));
-    
-    this->addChild(fire);
+        fire->setPosition(ccp(32, -30));
+        this->addChild(fire);
+       this->schedule(schedule_selector(Plane::shootBullet), 0.5);
 
     
     return true;
@@ -47,7 +48,8 @@ void Plane::upLevel(int upNum)
 {
     m_PlaneLevel+=upNum;
 }
-void Plane::shootBullet()
+void Plane::shootBullet(float dt)
 {
-    
+    GameLayer *gameLayer= (GameLayer*)this->getParent();
+    gameLayer->shootBullet();
 }

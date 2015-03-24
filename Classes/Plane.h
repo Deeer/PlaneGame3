@@ -26,7 +26,7 @@ public:
     void upLevel(int upNum);
     
     //发射子弹
-    void shootBullet();
+    void shootBullet(float dt);
     
     
 };

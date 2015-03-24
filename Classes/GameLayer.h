@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "Plane.h"
+#include "Bullet.h"
 USING_NS_CC;
 
 class GameLayer:public CCLayer
@@ -24,10 +25,15 @@ public:
     CREATE_FUNC(GameLayer);
     bool init();
       void onEnterTransitionDidFinish();
+    void shootBullet();
 private:
     Plane* m_plane;
     CCPoint m_beginPoint;
     void addPlane();
+    
+    void addBullet();
+    
+    void addCloud(float dt);
     
     void openTouch();
     
