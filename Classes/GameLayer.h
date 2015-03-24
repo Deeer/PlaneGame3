@@ -32,7 +32,7 @@ private:
     void openTouch();
     
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
-    // optional
+   
     
    void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 
