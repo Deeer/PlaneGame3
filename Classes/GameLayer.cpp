@@ -134,6 +134,8 @@ void GameLayer::shootBullet()
     bullet->setZOrder(-1);
     bullet->setPosition(m_plane->getPosition());
     this->addChild(bullet); //+1  bullet->retain();
+    //把子弹加到数组中
+    m_bullets->addObject(bullet);//+1
     CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("effect_bullet.mp3");
 }
 //检测子弹是否打中敌人

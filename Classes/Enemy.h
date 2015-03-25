@@ -18,6 +18,7 @@ typedef enum {
     ENEMY2,
     ENEMY3,
     ENEMY4,
+    ENEMY5,
     ENEMY_COUNT
 } EnemyType;
 
