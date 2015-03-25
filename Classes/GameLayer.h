@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "Plane.h"
 #include "Bullet.h"
+#include "Enemy.h"
 USING_NS_CC;
 
 class GameLayer:public CCLayer
@@ -26,17 +27,25 @@ public:
     bool init();
       void onEnterTransitionDidFinish();
     void shootBullet();
+   
 private:
     Plane* m_plane;
     CCPoint m_beginPoint;
+    //子弹数组
+    CCArray *m_bullets;
+    //敌人数组
+    CCArray *m_enemys;
+    
     void addPlane();
     
     void addBullet();
-    
+    void addEnemy(float dt);
     void addCloud(float dt);
     
     void openTouch();
-    
+    void bulletAndEnemyCollision();
+    void removeBullet();
+  
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
    
     

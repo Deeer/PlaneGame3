@@ -21,6 +21,12 @@
 		0479566B1ABFF3B800409CCF /* BG in Resources */ = {isa = PBXBuildFile; fileRef = 0479566A1ABFF3B800409CCF /* BG */; };
 		0487D2D41AC0F0D300AA6E78 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0487D2D21AC0F0D300AA6E78 /* Plane.cpp */; };
 		0487D2D61AC0F51E00AA6E78 /* Game in Resources */ = {isa = PBXBuildFile; fileRef = 0487D2D51AC0F51E00AA6E78 /* Game */; };
+		04E4813F1AC2647B00D561E8 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E4813D1AC2647B00D561E8 /* Enemy.cpp */; };
+		04E481451AC264F800D561E8 /* e2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E481401AC264F800D561E8 /* e2.png */; };
+		04E481461AC264F800D561E8 /* e4.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E481411AC264F800D561E8 /* e4.png */; };
+		04E481471AC264F800D561E8 /* e5.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E481421AC264F800D561E8 /* e5.png */; };
+		04E481481AC264F800D561E8 /* e3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E481431AC264F800D561E8 /* e3.png */; };
+		04E481491AC264F800D561E8 /* e1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E481441AC264F800D561E8 /* e1.png */; };
 		04EDAA9A1AC146DA00B952D7 /* Cloud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04EDAA981AC146DA00B952D7 /* Cloud.cpp */; };
 		15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */; };
 		15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88D1682F7D5002FB0C5 /* b2CollideCircle.cpp */; };
@@ -316,6 +322,13 @@
 		0487D2D21AC0F0D300AA6E78 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
 		0487D2D31AC0F0D300AA6E78 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		0487D2D51AC0F51E00AA6E78 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Game; sourceTree = "<group>"; };
+		04E4813D1AC2647B00D561E8 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		04E4813E1AC2647B00D561E8 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		04E481401AC264F800D561E8 /* e2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = e2.png; sourceTree = "<group>"; };
+		04E481411AC264F800D561E8 /* e4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = e4.png; sourceTree = "<group>"; };
+		04E481421AC264F800D561E8 /* e5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = e5.png; sourceTree = "<group>"; };
+		04E481431AC264F800D561E8 /* e3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = e3.png; sourceTree = "<group>"; };
+		04E481441AC264F800D561E8 /* e1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = e1.png; sourceTree = "<group>"; };
 		04EDAA981AC146DA00B952D7 /* Cloud.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cloud.cpp; sourceTree = "<group>"; };
 		04EDAA991AC146DA00B952D7 /* Cloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cloud.h; sourceTree = "<group>"; };
 		15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
@@ -882,6 +895,8 @@
 		047956661ABFE6A500409CCF /* GameLayer */ = {
 			isa = PBXGroup;
 			children = (
+				04E4813D1AC2647B00D561E8 /* Enemy.cpp */,
+				04E4813E1AC2647B00D561E8 /* Enemy.h */,
 				047956671ABFE71100409CCF /* GameLayer.cpp */,
 				047956681ABFE71100409CCF /* GameLayer.h */,
 				0487D2D21AC0F0D300AA6E78 /* Plane.cpp */,
@@ -2003,6 +2018,11 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04E481401AC264F800D561E8 /* e2.png */,
+				04E481411AC264F800D561E8 /* e4.png */,
+				04E481421AC264F800D561E8 /* e5.png */,
+				04E481431AC264F800D561E8 /* e3.png */,
+				04E481441AC264F800D561E8 /* e1.png */,
 				0487D2D51AC0F51E00AA6E78 /* Game */,
 				0479566A1ABFF3B800409CCF /* BG */,
 				0404F55A1ABFA37A00B38A54 /* Menu */,
@@ -2095,6 +2115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E481451AC264F800D561E8 /* e2.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
@@ -2107,13 +2128,17 @@
 				0404F55B1ABFA37A00B38A54 /* Menu in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
+				04E481471AC264F800D561E8 /* e5.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
+				04E481461AC264F800D561E8 /* e4.png in Resources */,
 				047956591ABFE0C900409CCF /* effect_boom.mp3 in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				04E481481AC264F800D561E8 /* e3.png in Resources */,
 				0479565E1ABFE1B800409CCF /* MyFont.fnt in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				0487D2D61AC0F51E00AA6E78 /* Game in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				04E481491AC264F800D561E8 /* e1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2136,6 +2161,7 @@
 				15C0B596196D412F007F909D /* TriggerMng.cpp in Sources */,
 				15A3D9051682F7D5002FB0C5 /* b2DynamicTree.cpp in Sources */,
 				15A3D9061682F7D5002FB0C5 /* b2TimeOfImpact.cpp in Sources */,
+				04E4813F1AC2647B00D561E8 /* Enemy.cpp in Sources */,
 				15A3D9071682F7D5002FB0C5 /* b2ChainShape.cpp in Sources */,
 				15A3D9081682F7D5002FB0C5 /* b2CircleShape.cpp in Sources */,
 				15A3D9091682F7D5002FB0C5 /* b2EdgeShape.cpp in Sources */,

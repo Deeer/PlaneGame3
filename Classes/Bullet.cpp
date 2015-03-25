@@ -26,7 +26,7 @@ bool Bullet::initBullet(int bulletLevel){
     const char*frameName = CCString::createWithFormat("1_%d.png",bulletLevel)->getCString();
     
     if (!CCSprite::initWithSpriteFrameName(frameName)) return false;
-    
+    m_isDie=false;
     m_attack =bulletLevel;
     m_speed =20+0.3*bulletLevel;
     
@@ -44,11 +44,17 @@ void Bullet::move(float dt)
     this ->setPositionY(this->getPositionY()+m_speed);
     if (this->getPositionY()>= SCREEN.height+this->getContentSize().height*0.5 ) {
         
-        this->removeBullet();
+//      子弹死亡
+        this->die();
+        
     }
 }
 //移除子弹
-void Bullet::removeBullet()
+//void Bullet::removeBullet()
+//{
+//    this->removeFromParent();
+//}
+void Bullet::die()
 {
-    this->removeFromParent();
+    m_isDie =true;
 }

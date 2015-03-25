@@ -15,7 +15,11 @@ bool GameLayer::init()
     if (!CCLayer::init()) return false;
     
     
-    
+    m_bullets = CCArray::create();
+    m_bullets->retain(); //+1
+    //敌人数组
+    m_enemys = CCArray::create();
+    CC_SAFE_RETAIN(m_enemys); //+1
 
     
     return true;
@@ -31,6 +35,12 @@ void GameLayer::onEnterTransitionDidFinish()
     this->schedule(schedule_selector(GameLayer::addCloud), 2);
     
     this->addPlane();
+    //添加敌人
+    this->schedule(schedule_selector(GameLayer::addEnemy), 1);
+    //检测碰撞
+    this->schedule(schedule_selector(GameLayer::bulletAndEnemyCollision));
+    //释放要移除的子弹对象
+    this->schedule(schedule_selector(GameLayer::removeBullet));
    
 }
 void GameLayer::addCloud(float dt)
@@ -60,6 +70,16 @@ void GameLayer::addCloud(float dt)
     m_plane->runAction(seq);
     
     
+}
+void GameLayer::addEnemy(float dt) {
+    int type = rand() % ENEMY_COUNT;
+    Enemy *enemy = Enemy::createEnemy((EnemyType)type);
+    float x = CCRANDOM_0_1() * SCREEN.width;
+    float y = SCREEN.height + enemy->getContentSize().height * 0.5;
+    enemy->setPosition(ccp(x,y));
+    this->addChild(enemy);
+    //把敌人加到数组中
+    m_enemys->addObject(enemy);
 }
 
 void GameLayer::addBullet()
@@ -116,3 +136,39 @@ void GameLayer::shootBullet()
     this->addChild(bullet); //+1  bullet->retain();
     CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("effect_bullet.mp3");
 }
+//检测子弹是否打中敌人
+void GameLayer::bulletAndEnemyCollision() {
+    for (int i = 0; i < m_bullets->count(); i++) {
+        Bullet *bullet = (Bullet*)m_bullets->objectAtIndex(i);
+        for (int j = 0; j < m_enemys->count(); j++) {
+            if (!bullet->getDie()) { //不是死的子弹 才可以打敌人
+                Enemy *enemy = (Enemy*)m_enemys->objectAtIndex(j);
+                if (bullet->boundingBox().intersectsRect(enemy->boundingBox())) {
+                    //                子弹打中敌人
+                    CCLog("子弹打中敌人");
+                    //子弹死亡
+                    bullet->die();
+                }
+            }
+        }
+    }
+}
+
+void GameLayer::removeBullet() {
+    CCArray *removeArray = CCArray::create();
+    for (int i = 0; i < m_bullets->count(); i++) {
+        Bullet *bullet = (Bullet*)m_bullets->objectAtIndex(i);
+        if (bullet->getDie()) {
+            //把死亡的子弹加到 移除数组中
+            removeArray->addObject(bullet);
+        }
+    }
+    for (int i = 0; i < removeArray->count(); i++) {
+        Bullet *removeBullet = (Bullet*)removeArray->objectAtIndex(i);
+        this->removeChild(removeBullet); // -1
+        m_bullets->removeObject(removeBullet); //-1
+    }
+    removeArray->removeAllObjects();//-1
+}
+
+

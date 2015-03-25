@@ -18,12 +18,16 @@ class Bullet :public CCSprite{
     static Bullet* createBullet(int bulletLevel);
     bool initBullet(int bulletLevel);
     CC_SYNTHESIZE_READONLY(int, m_attack, Attack);
+    CC_SYNTHESIZE_READONLY(bool, m_isDie, Die);
+    void die();
 private:
     float m_speed;
     //子弹移动
     void move(float dt);
     //移除子弹
-    void removeBullet();
+//    void removeBullet();
+    //子弹死亡
+    
     
     
 };
