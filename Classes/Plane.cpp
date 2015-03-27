@@ -46,7 +46,11 @@ bool Plane::init()
 
 void Plane::upLevel(int upNum)
 {
+    
     m_PlaneLevel+=upNum;
+    if (m_PlaneLevel>35) {
+        m_PlaneLevel=35;
+    }
 }
 void Plane::shootBullet(float dt)
 {

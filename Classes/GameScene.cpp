@@ -13,6 +13,7 @@
 using namespace CocosDenshion;
 GameScene* GameScene::createGameSence(int level)
 {
+    
     GameScene *secne =new GameScene;
     if (secne &&secne->initGameSence(level)) {
 
@@ -42,9 +43,9 @@ bool GameScene::initGameSence(int level)
     MapLayer *maplayer= MapLayer::createMapLayer(level);
     this->addChild(maplayer);
    
-    
+    m_level=level; 
      
-    GameLayer *gameLayer =GameLayer::create();
+    GameLayer *gameLayer =GameLayer::createGameLayer(level);
     this->addChild(gameLayer);
     
     
@@ -56,8 +57,13 @@ bool GameScene::initGameSence(int level)
 }
 void GameScene:: onEnterTransitionDidFinish()
 {
+    
+
+    
+    const char*musicName =CCString::createWithFormat("bg%d.mp3",m_level)->getCString();
     CCScene::onEnterTransitionDidFinish();
-    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("TheDawn.mp3");
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic(musicName);
+   
     
 }
 void GameScene::loadResource()

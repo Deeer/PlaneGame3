@@ -29,6 +29,9 @@ public:
     void shootBullet(float dt);
     
     
+    CC_SYNTHESIZE_READONLY(bool, m_isDie, Die);
+    
+    
 };
 
 #endif /* defined(__PlaneGame__Plane__) */

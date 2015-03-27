@@ -28,13 +28,18 @@ public:
     bool initEnemy(EnemyType type);
     //伤害
     void hurt(int hurtNum);
+    CC_SYNTHESIZE_READONLY(bool, m_isDie, Die);
+    CC_SYNTHESIZE_READONLY(bool, m_isOut, Outer);
+    CC_SYNTHESIZE_READONLY(int, m_score, Score);
 private:
+    CCProgressTimer *progerss;
+    int m_maxHp;
     int m_hp;
     float m_speed;
     void move(float dt);
-    void remove();
     //敌人死亡
     void die();
+    void outer();
 };
 #endif /* defined(__PlaneGame__Enemy__) */
 
